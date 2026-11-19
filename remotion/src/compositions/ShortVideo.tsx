@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { Video } from "@remotion/media";
+import { Video } from "remotion";
 import type { ShortVideoProps } from "../lib/types";
 import { Subtitles } from "./Subtitles";
 import { HookOverlay } from "./HookOverlay";
@@ -8,7 +8,7 @@ import { VideoEffects } from "./VideoEffects";
 
 /**
  * Main composition that layers all post-processing on top of the base video.
- * Uses @remotion/media Video for browser-side rendering compatibility.
+ * Uses remotion Video (2026-11-17: @remotion/media 4.0.541 imports Interactive from remotion, which remotion 4.0.541 does not export - bundle fatal).
  */
 export const ShortVideo: React.FC<Record<string, unknown>> = (rawProps) => {
   const { videoUrl, subtitles, hook, effects } =
